@@ -5,7 +5,7 @@
     (click)="start()"
     [disabled]="isStartedGame"
   >
-    Start
+    {{ startButtonValue }}
   </button>
   <button
     class="btn btn-primary"
@@ -13,7 +13,7 @@
     (click)="hit()"
     [disabled]="!isStartedGame"
   >
-    Hit
+    {{ hitButtonValue }}
   </button>
   <button
     class="btn btn-success"
@@ -21,7 +21,7 @@
     (click)="stay()"
     [disabled]="!isStartedGame"
   >
-    Stay
+    {{ stayButtonValue }}
   </button>
   <button
     class="btn btn-danger"
@@ -29,6 +29,6 @@
     (click)="reset()"
     [disabled]="!isStartedGame"
   >
-    Reset
+    {{ resetButtonValue }}
   </button>
 </div>

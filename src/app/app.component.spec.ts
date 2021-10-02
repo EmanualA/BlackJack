@@ -14,18 +14,17 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'blackjack'`, () => {
+  it("should have as heading 'Play BlackJack!!'", () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('blackjack');
+    const app = fixture.debugElement.componentInstance;
+    expect(app.heading).toEqual('Play BlackJack!!');
   });
 
-  it('should render title', () => {
+  it('should render heading', () => {
     const fixture = TestBed.createComponent(AppComponent);
+    let app = fixture.debugElement.componentInstance;
+    const compiled = fixture.debugElement.nativeElement;
     fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain(
-      'blackjack app is running!'
-    );
+    expect(compiled.querySelector('h1').textContent).toContain(app.heading);
   });
 });

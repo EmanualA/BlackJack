@@ -19,6 +19,11 @@ export class ButtonPanelComponent implements OnInit {
     private playerCardEmitService: PlayerCardEmitService
   ) {}
 
+  hitButtonValue: string = 'Hit';
+  startButtonValue: string = 'Start';
+  stayButtonValue: string = 'Stay';
+  resetButtonValue: string = 'Reset';
+
   isStartedGame: boolean = false;
   gameResult: string = '';
 
@@ -40,28 +45,7 @@ export class ButtonPanelComponent implements OnInit {
       this.gameStateService.calculateDealerPlayerPoints();
       this.dealerCardEmit(this.gameStateService.getDealerCards);
     }
-
-    if (
-      this.gameStateService.getDealerScore < 22 &&
-      this.gameStateService.getDealerScore >
-        this.gameStateService.getPlayerScore
-    ) {
-      this.gameResult = 'Player lose!';
-    } else if (
-      this.gameStateService.getDealerScore < 22 &&
-      this.gameStateService.getDealerScore <
-        this.gameStateService.getPlayerScore
-    ) {
-      this.gameResult = 'Player win!';
-    } else if (
-      this.gameStateService.getDealerScore < 22 &&
-      this.gameStateService.getDealerScore ===
-        this.gameStateService.getPlayerScore
-    ) {
-      this.gameResult = 'Draw!';
-    } else {
-      this.gameResult = 'Player win!';
-    }
+    this.gameResult = this.determineResultText();
 
     this.messageEmit(this.gameResult);
 
@@ -110,6 +94,34 @@ export class ButtonPanelComponent implements OnInit {
       cards,
       this.playerCardEmitService
     );
+  }
+
+  private determineResultText(): string {
+    let returnString: string = '';
+
+    if (
+      this.gameStateService.getDealerScore < 22 &&
+      this.gameStateService.getDealerScore >
+        this.gameStateService.getPlayerScore
+    ) {
+      returnString = 'Player lose!';
+    } else if (
+      this.gameStateService.getDealerScore < 22 &&
+      this.gameStateService.getDealerScore <
+        this.gameStateService.getPlayerScore
+    ) {
+      returnString = 'Player win!';
+    } else if (
+      this.gameStateService.getDealerScore < 22 &&
+      this.gameStateService.getDealerScore ===
+        this.gameStateService.getPlayerScore
+    ) {
+      returnString = 'Draw!';
+    } else {
+      returnString = 'Player win!';
+    }
+
+    return returnString;
   }
 
   ngOnInit(): void {}
