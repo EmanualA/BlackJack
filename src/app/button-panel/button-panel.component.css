@@ -1,0 +1,10 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}

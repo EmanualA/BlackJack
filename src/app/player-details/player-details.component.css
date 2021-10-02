@@ -1,0 +1,16 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.col-md-12 {
+  color: white;
+  text-align: center;
+}
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

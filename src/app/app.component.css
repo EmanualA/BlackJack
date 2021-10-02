@@ -1,0 +1,14 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.row {
+  color: white;
+  text-align: center;
+}
+
+.container {
+  background: green;
+}
