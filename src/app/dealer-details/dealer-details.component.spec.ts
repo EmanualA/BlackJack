@@ -13,10 +13,7 @@ import { DealerDetailsComponent } from './dealer-details.component';
 describe('DealerDetailsComponent', () => {
   let component: DealerDetailsComponent;
   let fixture: ComponentFixture<DealerDetailsComponent>;
-  const mockCardList: Card[] = [
-    new Card('hearts', '10'),
-    new Card('spade', '5'),
-  ];
+  const mockCardList: Card[] = [];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
