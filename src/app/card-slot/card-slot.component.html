@@ -1,5 +1,5 @@
 <div class="col-sm-12 deck" *ngIf="card.getIsFlip">Hidden</div>
 
-<div class="col-sm-12 deck" *ngIf="!card.getIsFlip">
+<div id="card-value" class="col-sm-12 deck" *ngIf="!card.getIsFlip">
   {{ card.getCardFace }} - {{ card.getCardtype }}
 </div>
