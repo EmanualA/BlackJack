@@ -16,13 +16,6 @@ export class DealerCardEmitService {
     return this.subject.asObservable();
   }
 
-  // public stringEmittingMethod(
-  //   message: string,
-  //   stringEmitService: StringEmitService
-  // ): void {
-  //   stringEmitService.emit<string>(message);
-  // }
-
   public cardEmittingMethod(
     cards: Card[],
     siblingEmitService: DealerCardEmitService
