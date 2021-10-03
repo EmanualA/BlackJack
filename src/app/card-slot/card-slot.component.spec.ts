@@ -40,7 +40,8 @@ describe('CardSlotComponent', () => {
 
   it('test card displayed as received when IsFlip is true', () => {
     app.componentInstance.card.setIsFlip = true;
+    fixture.detectChanges();
     const cardElement: HTMLElement = fixture.nativeElement;
-    expect(cardElement.textContent).toContain('hidden');
+    expect(cardElement.textContent).toContain('Hidden');
   });
 });
